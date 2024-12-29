@@ -1,16 +1,20 @@
+import todoFunc as tf
+from rlcompleter import Completer
+
 todos = []
 def todo():
+    filepath = input("filepath: ")
     while True:
         userInp = input("Enter add , show, edit, complete: ")
         if userInp.startswith('add'):
             userInp = userInp.strip("add")
-            with open('todo.txt', 'r') as file:
-                todos = file.readlines()
-            todos.append(userInp)
-            with open('todo.txt', 'w') as file:
-                for todo in todos:
-                    file.write(todo)
-        else:
-             exit()
-
+            tf.addTodos(filepath,todos,userInp)
+        elif userInp.startswith('show'):
+            tf.showTodos(filepath)
+        elif userInp.startswith("edit"):
+            tf.editTods(filepath)
+        elif userInp.startswith("complete"):
+            tf.completeTask(filepath, todos)
+        elif userInp.startswith("exit"):
+            exit()
 todo()
