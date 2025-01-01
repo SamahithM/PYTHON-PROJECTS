@@ -6,10 +6,10 @@ def getTodos(filepath):
 def writelines(filepath,todos):
     with open(filepath, 'w') as file:
         for todo in todos:
-            file.write(todo+"\n")
+            file.write(f"{todo}")
 def addTodos(filepath,todos,userInp):
     getTodos(filepath)
-    todos.append(userInp + "\n")
+    todos.append(f'{userInp}\n')
     writelines(filepath,todos)
 def showTodos(filepath):
     todos = getTodos(filepath)

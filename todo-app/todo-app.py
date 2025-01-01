@@ -1,5 +1,5 @@
 import todoFunc as tf
-from rlcompleter import Completer
+
 
 todos = []
 def todo():
